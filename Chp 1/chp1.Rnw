@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Option 1: Slides with solutions
+
+\documentclass[slidestop,compress,mathserif]{beamer}
+\newcommand{\soln}[1]{\textit{#1}}
+\newcommand{\solnGr}[1]{#1}
+
+% Option 2: Handouts without solutions
+
+%\documentclass[11pt,containsverbatim,handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+%\newcommand{\soln}[1]{ }
+%\newcommand{\solnGr}{ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{../lec_style.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Chp 1: Intro. to data]{Chapter 1: Introduction to data}
+\author{OpenIntro Statistics, 3rd Edition}
+\institute{$\:$ \\ {\footnotesize Slides developed by Mine \c{C}etinkaya-Rundel of OpenIntro. \\
+The slides may be copied, edited, and/or shared via the \webLink{http://creativecommons.org/licenses/by-sa/3.0/us/}{CC BY-SA license.} \\
+Some images may be included under fair use guidelines (educational purposes).}}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{
+\addtocounter{framenumber}{-1} 
+{\removepagenumbers 
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../OpenIntro_Grid_4_3-01.jpg}}
+\begin{frame}
+
+\hfill \includegraphics[width=20mm]{../oiLogo_highres}
+
+\titlepage
+
+\end{frame}
+}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}
+
+\begin{frame}[fragile]
+
+\frametitle{Goals of The Course}
+
+After theory (what you learnin substantive courses) and after design (what you learn in 700), comes analysis (what you learn here and in 702) - telling your story with data.  
+
+\begin{itemize}
+	\item Does what you predict actually happen? 
+
+	\item Do your data/does your design meet the assumptions of the proceure you're using?
+
+	\item How big are the effects? 
+
+	\item How do you convey these results to your readers? 
+\end{itemize}
+	
+\end{frame}
+
+
+
+\input{1-1_case_study/1-1_case_study}
+\input{1-2_data_basics/1-2_data_basics}
+\input{1-3_data_collection_principles/1-3_data_collection_principles}
+\input{1-4_obs_studies_sampling/1-4_obs_studies_sampling}
+\input{1-5_experiments/1-5_experiments}
+% \input{1-6_numerical_data/1-6_numerical_data}
+% \input{1-7_categorical_data/1-7_categorical_data}
+% \input{1-8_gender_discrimination/1-8_gender_discrimination}
+
+\section{Introduction to R}
+
+<<setup, echo=F, include=FALSE, cache=FALSE>>=
+library(knitr)
+# set global chunk options
+opts_chunk$set(fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90, useFancyQuotes=FALSE)
+@
+
+
+
+\subsection{Installing R and RStudio}
+
+\begin{frame}[fragile]
+
+\frametitle{Software Introduction: R}
+
+\begin{itemize}
+	\item \textbf{R} can be downloaded from \url{http://cran.r-project.org}
+	\begin{itemize}
+		\item For Windows, click on \verb"Download R for Windows", then click on \verb"base" and finally on\\ \verb"Download R 3.3.1 for Windows". 
+		\begin{itemize}
+			\item I would recommend MDI mode when you have the option, but it's up to you. 
+		\end{itemize}
+		
+		\item For Mac, click on \verb"Download R for MacOS X", then on \verb"R-3.3.1-os.pkg" (where os = (snowleopard, mavericks)).  
+			\begin{itemize}
+				\item You should also go on that same page to the \verb"tools" link and download and install \verb"gfortran-4.2.3.dmg" and \verb"tcltk-8.5.5-x11.dmg". 
+			\end{itemize}
+	\end{itemize}
+
+	\item Then, double-clicking the R icon will launch R. 
+
+	\item We will interact with R mostly through RStudio, though. 
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{RStudio}
+
+Rstudio is an IDE (Integrated Development Environment) for R.  It allows you to: 
+
+\begin{itemize}
+	\item write and save code 
+	\item view output 
+	\item manage your workspace
+	\item even write papers if you want
+\end{itemize} 
+
+You can download RStudio from \url{http://www.rstudio.com/products/rstudio/download/}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Entering Data in R}
+
+You can enter data into R in a bunch of different ways, but I'll talk about a couple.  First, you can enter it directly. 
+
+\begin{footnotesize}
+<<entering, echo=T, include=T>>=
+x <- c(2,3,7,10,11)
+mean(x)
+median(x)
+@
+\end{footnotesize}
+\begin{itemize}
+
+\item You could also enter it into a spreadsheet in excel, save the file as a \verb".csv", and then read into R using the \verb"read.csv". 
+
+\item You can also read Stata datasets into R and write Stata datasets out of R, but we will save these for later. 
+
+\end{itemize}
+
+\end{frame}
+\begin{frame}[fragile]
+
+\frametitle{Math to Variables: R}
+
+In R you can directly to any mathematical operation to any object that is numerical (e.g., a variable).  Using \verb"x" above, we could square it (the \verb"^" means ``to the power of'').  You can add, subtract, multiply and divide with \verb"+", \verb"-", \verb"*" and \verb"/", respectively.  You can also do multiple operations at once. 
+\begin{scriptsize}
+<<math, echo=T, include=T>>=
+x + 3
+x/2
+x*1.5
+(x+5)^3	
+@
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Fixing Mistakes}
+
+Let's say that we had an entry that was wrong and we wanted to fix it, let's say the 4$^{th}$ value of \verb"x" was supposed to be 9 instead of 10.  
+
+<<fix, echo=T, include=T>>=
+x[4] <- 9	
+summary(x)
+@
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Calculating Number of Times Something Happens: R}
+
+Calculating the number of times a condition is met in R is easy.  For example, if we wanted to know how often $x$ is bigger than 4, we could do.  
+<<numtimes, echo=T, include=T>>=
+sum(x > 4)
+@
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Calculating Percentages: R}
+
+Calculating a proportion is just taking the number of times something happens over the total number of times it could have happened.  For example, if we wanted to know the proportion of times $x$ is bigger than 4, we need to divide the number of times $x$ is bigger than 4 by the number of values in $x$.  $x$ is bigger than four, 3 times and not bigger than four 2 times.  
+<<props, echo=T, include=T>>=
+sum(x > 4)/length(x)
+mean(x > 4)
+@
+
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

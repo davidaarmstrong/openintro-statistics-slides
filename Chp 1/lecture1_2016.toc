@@ -1,0 +1,21 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Case study}{4}{0}{2}
+\beamer@sectionintoc {3}{Data basics}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Observations and variables}{11}{0}{3}
+\beamer@subsectionintoc {3}{2}{Types of variables}{12}{0}{3}
+\beamer@subsectionintoc {3}{3}{Relationships among variables}{15}{0}{3}
+\beamer@subsectionintoc {3}{4}{Associated and independent variables}{16}{0}{3}
+\beamer@sectionintoc {4}{Overview of data collection principles}{18}{0}{4}
+\beamer@subsectionintoc {4}{1}{Populations and samples}{19}{0}{4}
+\beamer@subsectionintoc {4}{2}{Anecdotal evidence}{20}{0}{4}
+\beamer@subsectionintoc {4}{3}{Sampling from a population}{21}{0}{4}
+\beamer@subsectionintoc {4}{4}{Explanatory and response variables}{30}{0}{4}
+\beamer@subsectionintoc {4}{5}{Observational studies and experiments}{31}{0}{4}
+\beamer@sectionintoc {5}{Observational studies and sampling strategies}{32}{0}{5}
+\beamer@subsectionintoc {5}{1}{Confounding}{33}{0}{5}
+\beamer@subsectionintoc {5}{2}{Sampling strategies}{37}{0}{5}
+\beamer@sectionintoc {6}{Experiments}{43}{0}{6}
+\beamer@sectionintoc {7}{Introduction to R}{46}{0}{7}
+\beamer@subsectionintoc {7}{1}{Installing R and RStudio}{47}{0}{7}
